@@ -19,6 +19,29 @@ bool is_heap_empty(Heap *h){
 }
 
 
-float pop(Heap *h){
-    return h->data[h->index];
+float pop_heap(Heap *h){
+    float a = h->data[0];
+    for (int i = 0; i < h->index; ++i) {
+        h->data[i]=h->data[i+1];
+    }
+    return a;
+}
+
+
+void push_heap(Heap *h, float value){
+    h->data[h->index] = value;
+}
+
+float replace(Heap *h, float value){
+    float a = h->data[0];
+    h->data[0] = value;
+    return a;
+}
+
+float peek_heap(Heap *h){
+    return h->data[0];
+}
+
+void clear_heap(Heap *h){
+    h->index = 0;
 }
