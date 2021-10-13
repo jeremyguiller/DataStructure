@@ -15,8 +15,8 @@
 #include <errno.h>
 #include <string.h>
 #include <assert.h>
-
 #include "stack.h"
+#include "heap.h"
 
 float test(int a) {
     errno = a;
@@ -34,8 +34,5 @@ float test(int a) {
  */
 int main(int argc, char** argv) {
 
-
-
-    return (EXIT_SUCCESS);
 }
 
