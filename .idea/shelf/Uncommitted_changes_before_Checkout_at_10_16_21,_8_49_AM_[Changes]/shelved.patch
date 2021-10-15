@@ -1,0 +1,56 @@
+Index: main.c
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#include <stdio.h>\n#include <stdlib.h>\n#include <errno.h>\n#include <string.h>\n#include <assert.h>\n#include \"tests.h\"\n\n\n\nint main(int argc, char** argv) {\n    //testStack();\n    //testQueue();\n    testArraylist();\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.c b/main.c
+--- a/main.c	(revision bc1018ad479c745d3796e53772f7236d02fb5f38)
++++ b/main.c	(date 1634324318614)
+@@ -8,8 +8,8 @@
+ 
+ 
+ int main(int argc, char** argv) {
+-    //testStack();
+-    //testQueue();
++    testStack();
++    testQueue();
+     testArraylist();
+ }
+ 
+Index: array_list.c
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#include <stdio.h>\n#include <stdlib.h>\n#include <Array_list.h>\n\n/* *\n * @bref Init Array liste\n */\nvoid init_array_list(Array_list *l){\n    l->index=0;\n}\n\n/**\n * @brief Insérer la valeur à la position\n * @param l Array qui recevra la valeur\n * @param position Position ou inserer\n * @param value Valeur à ajouter\n */\nvoid array_insert_at(Array_list *l, int position, float value){\n    if (position > l->index){\n        array_add(l, value);\n    }\n    else{\n        for (int i = l->index; i >= position; i--)\n        {\n            l->data[i + 1] = l->data[i];\n        }\n        l->data[position] = value;\n        l->index++;\n    }\n}\n\n/* *\n * @brief Ajout de la valeur au tableau\n * @param l : Liste des tableaux\n * @param value : valeur à ajouter\n */\nvoid array_add(Array_list *l, float value){\n    l->data[l->index] = value;\n    l->index++;\n}\n\n/* *\n * @brief Supprimer la valeur à la position\n * @param l : liste de tableaux\n * @param position : Supprimer la valeur position\n */\nfloat array_remove_at(Array_list *l, int position){\n    float temp = l->data[position];\n    for (int i = position; i < l->index; i++){\n        l->data[i] = l->data[i + 1];\n    }\n    l->index--;\n    return temp;\n}\n\n/* *\n * @bref Recuperer la valeur\n * @param l : liste de tableaux\n * @param position : Index de la valeur à retourner\n */\nfloat array_get_at(Array_list *l,int position){\n    return l->data[position];\n}\n\n/* *\n * @brief Effacer la liste des tableaux\n * @param l : Liste des tableaux à effacer\n */\nvoid array_clear(Array_list *l){\n    init_array_list(l);\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/array_list.c b/array_list.c
+--- a/array_list.c	(revision bc1018ad479c745d3796e53772f7236d02fb5f38)
++++ b/array_list.c	(date 1634324303030)
+@@ -1,6 +1,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <Array_list.h>
++#include <array_list.h>
+ 
+ /* *
+  * @bref Init Array liste
+Index: heap.h
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#include <stdbool.h>\n#include <conio.h>\n\n#ifndef HEAP_H\n#define HEAP_H\n\n\n#define HEAP_MAX_SIZE 100\n\ntypedef struct {\n    float data[HEAP_MAX_SIZE];\n    int index;\n} Heap;\n\n\n#endif /* HEAP_H */\n\nvoid init_heap(Heap *h);\nbool is_heap_empty(Heap *h);\nfloat pop_heap(Heap *h); //pop the root value\nvoid push_heap(Heap *h, float value);\nfloat replace(Heap *h, float value); // pop root and replace with a new value.\nfloat peek_heap(Heap *h); // return root value but don’t remove it\nvoid clear_heap(Heap *h);\n\n//En option\nvoid heapify(Heap *s, float array[], size_t array_size); //create Heap from array\nvoid merge(Heap *dest, Heap *src); //merge src into dest\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/heap.h b/heap.h
+--- a/heap.h	(revision bc1018ad479c745d3796e53772f7236d02fb5f38)
++++ b/heap.h	(date 1634324282406)
+@@ -1,5 +1,5 @@
+ #include <stdbool.h>
+-#include <conio.h>
++#include <glob.h>
+ 
+ #ifndef HEAP_H
+ #define HEAP_H

@@ -20,5 +20,5 @@ float dequeue(Queue *q);
 
 bool is_queue_empty(Queue *q);
 float front(Queue *q); //aka peek
-void clear(Queue *q);
+void queue_clear(Queue *q);
 
