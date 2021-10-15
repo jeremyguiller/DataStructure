@@ -25,7 +25,6 @@ void array_enqueue(Queue *q, float value){
  * @brief Desempiler
  */
 float array_dequeue(Queue *q){
-    {
         float result = q->data[q->index-1];
         q->index--;
         return result;
@@ -50,5 +49,5 @@ float array_front(Queue *q) { //aka peek
  * @param q File à effacer
  */
 void array_clear(Queue *q){
-    init_queue(q);
+    array_init_queue(q);
 }
