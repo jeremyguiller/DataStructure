@@ -14,11 +14,10 @@ typedef struct {
 
 #endif /* QUEUE_H */
 
-void init_queue(Queue *s);
-void enqueue(Queue *q, float value);
-float dequeue(Queue *q);
-
-bool is_queue_empty(Queue *q);
-float front(Queue *q); //aka peek
-void clear(Queue *q);
+void array_init_queue(Queue *s);
+void array_enqueue(Queue *q, float value);
+float array_dequeue(Queue *q);
+bool array_is_queue_empty(Queue *q);
+float array_front(Queue *q); //aka peek
+void array_clear(Queue *q);
 
