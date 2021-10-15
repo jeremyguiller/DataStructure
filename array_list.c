@@ -7,33 +7,39 @@ void init_array_list(Array_list *l){
 }
 
 void insert_at(Array_list *l, int position, float value){
-    l->data[position] = value;
-    l->index += 1;
+    if (position > l->index){
+        add(l, value);
+    }
+    else{
+        for (int i = l->index; i >= position; i--)
+        {
+            l->data[i + 1] = l->data[i];
+        }
+        l->data[position] = value;
+        l->index++;
+    }
 }
+
 
 void add(Array_list *l, float value){
     l->data[l->index] = value;
+    l->index++;
 }
 
 float remove_at(Array_list *l, int position){
-    int i;
-    float a = l->data[0];
-
-    for(i=0;i<l->data[position];i++) {
-        l->data[i]=l->data[i+1];
+    float temp = l->data[position];
+    for (int i = position; i < l->index; i++){
+        l->data[i] = l->data[i + 1];
     }
-    return a;
+    l->index--;
+    return temp;
 }
 
 float get_at(Array_list *l,int position){
-
+    return l->data[position];
 }
 
 void clear(Array_list *l){
-    int i;
-
-    for(i=0;i<l->data[l->index];i++) {
-        l->index += 1;
-    }
+    init_array_list(l);
 }
 

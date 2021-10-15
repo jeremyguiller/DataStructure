@@ -6,7 +6,7 @@
 #include "queue.h"
 #include "array_list.h"
 #include "stack.h"
-
+#include "heap.h"
 
 float test(int a) {
     errno = a;
@@ -44,11 +44,6 @@ int main(int argc, char** argv) {
     void test_heap(){
 
     }
-
-    void test_(){
-
-    }
-
 
     return (EXIT_SUCCESS);
 }
