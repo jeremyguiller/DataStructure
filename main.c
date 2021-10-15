@@ -16,40 +16,41 @@ float test(int a) {
     perror("Error printed by perror");
     fprintf(stderr, "Error opening file: %s\n", strerror(errnum));
 }
+void test_stack(){
+
+}
+
+void test_queue(){
+    void init_queue(Queue *s);
+    void enqueue(Queue *q, float value);
+    float dequeue(Queue *q);
+    bool is_queue_empty(Queue *q);
+    float front(Queue *q);
+    void clear(Queue *q);
+}
+
+void test_array_list(){
+    void init_array_list(Array_list *l);
+    void insert_at(Array_list *l, int position, float value);
+    float remove_at(Array_list *l, int position);
+    float get_at(Array_list *l, int position);
+    void clear(Array_list *l);
+}
+
+void test_heap(){
+
+}
+
+void test_(){
+
+}
+
+
+
 
 int main(int argc, char** argv) {
 
 
-    void test_stack(){
 
-    }
-
-    void test_queue(){
-        void init_queue(Queue *s);
-        void enqueue(Queue *q, float value);
-        float dequeue(Queue *q);
-        bool is_queue_empty(Queue *q);
-        float front(Queue *q);
-        void clear(Queue *q);
-    }
-
-    void test_array_list(){
-        void init_array_list(Array_list *l);
-        void insert_at(Array_list *l, int position, float value);
-        float remove_at(Array_list *l, int position);
-        float get_at(Array_list *l, int position);
-        void clear(Array_list *l);
-    }
-
-    void test_heap(){
-
-    }
-
-    void test_(){
-
-    }
-
-
-    return (EXIT_SUCCESS);
 }
 

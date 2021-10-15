@@ -34,6 +34,8 @@ void clear(Array_list *l){
 
     for(i=0;i<l->data[l->index];i++) {
         l->index += 1;
+        int a;
     }
 }
+
 

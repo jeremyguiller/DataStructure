@@ -14,4 +14,4 @@ add_executable(DataStructure
         queue.c
         queue.h
         stack.c
-        stack.h)
+        stack.h tests.h tests.c)
