@@ -12,21 +12,24 @@ void enqueue(Queue *q, float value){
 }
 
 float dequeue(Queue *q){
-    float a= q->data[q->index-1];
-    q->index -= 1;
-    return a;
+    int i;
+    float a = q->data[0];
 
+    for(i=0;i<q->index;i++) {
+        q->data[i]=q->data[i+1];
+    }
+    return a;
 }
 
 bool is_queue_empty(Queue *q){
     int i, valmax;
 
-    for(i=0;i<QUEUE_MAX_SIZE;i++){
-        if(q->data[q->index] == 0){
+    for(i=0;i<q->index;i++){
+        if(q->index == NULL){
             valmax = i-1;
         }
     }
-
+    return true;
 }
 
 float front(Queue *q) { //aka peek
