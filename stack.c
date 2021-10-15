@@ -36,6 +36,7 @@ float pop(Stack *s){
     s->index -= 1;
     return a;
 }
+
 /**
  * Permet de verifier si la pile est vide
  * @param Stack que l'on souhaite modifier
