@@ -1,26 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   queue.h
- * Author: aurelio
- *
- */
-
 #include <stdbool.h>
 
 #ifndef QUEUE_H
 #define QUEUE_H
 
-
+//premier arrivé premier sortit
 #define QUEUE_MAX_SIZE 100
 
 typedef struct {
-    float data[QUEUE_MAX_SIZE];
-    int index;
+    float data[QUEUE_MAX_SIZE]; //Taille
+    int index;  //Endroit dans la memoire
 } Queue;
 
 
