@@ -3,12 +3,12 @@
 #include <errno.h>
 #include <string.h>
 #include <assert.h>
-#include "tests.h"
+#include "tests/tests.h"
 
 
 
 int main(int argc, char** argv) {
-    //testStack();
+    testStack();
     //testQueue();
     testArraylist();
 }
